@@ -76,10 +76,10 @@ void answer()
 {
 	for (int i = 0; i < steps2; i++)
 	{
-		if ((comp[i - 1] + 1 != comp[i])&&(comp[i]%60==0)) cout << comp[i] / 60 << ":" << "00" << " ";
+		if ((comp[i - 1] + 1 != comp[i])&&((comp[i]%60==0)||(comp[i] % 60<10))) cout << comp[i] / 60 << ":" << "0" << comp[i] % 60 << " ";
 		else	if (comp[i - 1] + 1 != comp[i]) cout << comp[i] / 60 << ":" << comp[i] % 60 << " ";
 		
-		if ((comp[i + 1] - 1 != comp[i]) && ((comp[i] + 1) % 60 == 0)) cout << (comp[i]+1) / 60 << ":" << "00"<<endl;
+		if ((comp[i + 1] - 1 != comp[i]) && (((comp[i] + 1) % 60 == 0)||(comp[i] % 60<10))) cout << (comp[i]+1) / 60 << ":" << "0" << (comp[i]+1) % 60 <<endl;
 		else if (comp[i+1]-1!=comp[i]) cout << (comp[i]+1) / 60 << ":" << (comp[i]+1) % 60 << endl;
 	}
 }
